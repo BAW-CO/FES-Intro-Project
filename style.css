@@ -26,6 +26,14 @@ a {
     position: relative;
 }
 
+i {
+    transition: opacity 300ms ease;
+}
+
+i:hover {
+    opacity: 0.7;
+}
+
 .link__hover-effect:after {
     content: "";
     position: absolute;
@@ -156,8 +164,25 @@ nav {
     overflow: hidden;
     box-shadow: 0 8px 8px rgba(6, 123, 144, 0.16);
     margin-bottom: 28px;
+    animation: animate-about-me-picture 800ms 300ms backwards;
 }
 
+.about-me__info--title {
+    margin-bottom: 8px;
+    animation: fade-up 650ms 400ms backwards;
+}
+
+@keyframes animate-about-me-picture {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .about-me__picture {
     width: 100%;
     transform: scale(1.1);
@@ -165,9 +190,10 @@ nav {
 }
 
 .about-me__info--p {
-    font-size: 20;
+    font-size: 20px;
     margin-bottom: 28px;
     text-align: center;
+    animation: fade-up 650ms 600ms backwards;
 }
 
 .about-me__link {
@@ -186,6 +212,22 @@ nav {
 .about-me__img {
     width: 100%;
     padding-top: 32px;
+    animation: fade-up 650ms 1000ms backwards ease;
+}
+
+.about-me__links {
+    animation: fade-up 650ms 800ms backwards;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .language__img {
@@ -401,4 +443,41 @@ footer {
         width: calc(100% / 3);
 
     }
+    .project__description--p {
+        font-size: 14px;
+    }
+    .project__description {
+        padding-right: 30px;
+        left: 30px;
+    }
 }
+@media (max-width: 480px) {
+    .nav__link:not(:last-child) {
+        display: none; 
+    }
+
+    .project__description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+    .project__description--p {
+        display: none;
+    }
+
+    .project__description--links {
+        display: flex;
+        justify-content: center;
+    }
+    .project__description--title {
+        line-height: 1;
+        font-size: 24px;
+        text-align: center;
+    }
+    .project__description--subtitle {
+        text-align: center;
+        margin: 12px 0;
+        font-size: 14px;
+    }
+}
+

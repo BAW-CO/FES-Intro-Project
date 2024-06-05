@@ -206,13 +206,16 @@ nav {
 .about-me__img--container {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
+
 
 .about-me__img {
     width: 100%;
     padding-top: 32px;
     animation: fade-up 650ms 1000ms backwards ease;
+    max-width: 1600px;
 }
 
 .about-me__links {
